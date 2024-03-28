@@ -1,7 +1,16 @@
-import { Avatar, Flex, Image, Text, Box, Divider, Button } from "@chakra-ui/react";
+import {
+  Avatar,
+  Flex,
+  Image,
+  Text,
+  Box,
+  Divider,
+  Button,
+} from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 import Actions from "../components/Actions";
 import { useState } from "react";
+import Comment from "../components/Comment";
 
 const PostPage = () => {
   const [liked, setLiked] = useState(false);
@@ -54,16 +63,42 @@ const PostPage = () => {
       <Divider my={4} />
 
       <Flex justifyContent={"space-between"}>
-				<Flex gap={2} alignItems={"center"}>
-					<Text fontSize={"2xl"}>👋</Text>
-					<Text color={"gray.light"}>Get the app to like, reply and post.</Text>
-				</Flex>
-				<Button>Get</Button>
-			</Flex>
+        <Flex gap={2} alignItems={"center"}>
+          <Text fontSize={"2xl"}>👋</Text>
+          <Text color={"gray.light"}>Get the app to like, reply and post.</Text>
+        </Flex>
+        <Button>Get</Button>
+      </Flex>
 
       <Divider my={4} />
-
-      
+      <Comment
+        comment="Looks really good"
+        createdAt="2d"
+        likes={100}
+        username="johdoe"
+        userAvatar="https://bit.ly/kent-c-dodds"
+      />
+      <Comment
+        comment="Amazing"
+        createdAt="2d"
+        likes={105}
+        username="johdoe"
+        userAvatar="https://bit.ly/tioluwani-kolawole"
+      />
+      <Comment
+        comment="Wonderul sharing"
+        createdAt="2d"
+        likes={2000}
+        username="johdoe"
+        userAvatar="https://bit.ly/code-beast"
+      />
+      <Comment
+        comment="Its good baby"
+        createdAt="2d"
+        likes={4076}
+        username="johdoe"
+        userAvatar="https://bit.ly/sage-adebayo"
+      />
     </>
   );
 };
