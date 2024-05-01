@@ -135,6 +135,7 @@ export default function UpdateProfilePage() {
 							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
 							type='password'
+                            isRequired
 						/>
 					</FormControl>
 					<Stack spacing={6} direction={["column", "row"]}>
