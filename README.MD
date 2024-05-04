@@ -1,8 +1,8 @@
 > Social Media MERN Application using React Js
 > [Follow or Connect me](https://www.linkedin.com/in/jagan-kumar-hotta-502a76270/)
 
-![This is the project Thumbnail](./snap.webp)
-![This is the example of Userpage](./thread.png)
+![This is the project Thumbnail](./thread.png)
+![This is the example of Userpage](./snap.webp)
 
 ## Checking Node.js Version:
 
