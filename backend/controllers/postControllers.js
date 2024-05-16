@@ -1,6 +1,6 @@
 import Post from "../models/postModel.js";
 import User from "../models/userModel.js";
-// import { v2 as cloudinary } from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 
 const createPost = async (req, res) => {
 	try {
@@ -25,10 +25,10 @@ const createPost = async (req, res) => {
 			return res.status(400).json({ error: `Text must be less than ${maxLength} characters` });
 		}
 
-		// if (img) {
-		// 	const uploadedResponse = await cloudinary.uploader.upload(img);
-		// 	img = uploadedResponse.secure_url;
-		// }
+		if (img) {
+			const uploadedResponse = await cloudinary.uploader.upload(img);
+			img = uploadedResponse.secure_url;
+		}
 
 		const newPost = new Post({ postedBy, text, img });
 		await newPost.save();
@@ -65,10 +65,10 @@ const deletePost = async (req, res) => {
 			return res.status(401).json({ error: "Unauthorized to delete post" });
 		}
 
-		// if (post.img) {
-		// 	const imgId = post.img.split("/").pop().split(".")[0];
-		// 	await cloudinary.uploader.destroy(imgId);
-		// }
+		if (post.img) {
+			const imgId = post.img.split("/").pop().split(".")[0];
+			await cloudinary.uploader.destroy(imgId);
+		}
 
 		await Post.findByIdAndDelete(req.params.id);
 
